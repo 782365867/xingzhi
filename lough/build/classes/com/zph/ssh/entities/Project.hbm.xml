@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-27 22:15:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zph.ssh.entities.Project" table="PROJECT">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="projectId" type="java.lang.String">
+			<column name="PROJECT_ID" />
+		</property>
+		<property name="projectName" type="java.lang.String">
+			<column name="PROJECT_NAME" />
+		</property>
+		<property name="startTime" type="java.util.Date">
+			<column name="START_TIME" />
+		</property>
+		<property name="overTime" type="java.util.Date">
+			<column name="OVER_TIME" />
+		</property>
+		<property name="numberLimit" type="java.lang.Integer">
+			<column name="NUMBER_LIMIT" />
+		</property>
+		<property name="number" type="java.lang.Integer">
+			<column name="NUMBER" />
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="REMARKS" />
+		</property>
+		<property name="payState" type="java.lang.Integer">
+			<column name="PAY_STATE" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="testAction" class="com.zph.ssh.actions.TestAction"
+		scope="prototype"></bean>
+
+	<bean id="loginAction" class="com.zph.ssh.actions.LoginAction"
+		scope="prototype">
+		<property name="adminUserService" ref="adminUserService"></property>
+	</bean>
+	<bean id="adminUserService" class="com.zph.ssh.service.AdminUserService">
+		<property name="adminUserDao" ref="adminUserDao"></property>
+	</bean>
+	<bean id="adminUserDao" class="com.zph.ssh.dao.AdminUserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="projectAction" class="com.zph.ssh.actions.ProjectAction"
+		scope="prototype">
+		<property name="projectService" ref="projectService"></property>
+	</bean>
+	<bean id="projectService" class="com.zph.ssh.service.ProjectService">
+		<property name="projectDao" ref="projectDao"></property>
+	</bean>
+	<bean id="projectDao" class="com.zph.ssh.dao.ProjectDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="applyAction" class="com.zph.ssh.actions.ApplyAction"
+		scope="prototype">
+		<property name="teacherService" ref="teacherService"></property>
+		<property name="projectService" ref="projectService"></property>
+		<property name="applyService" ref="applyService"></property>
+	</bean>
+	<bean name="applyService" class="com.zph.ssh.service.ApplyService">
+		<property name="applyDao" ref="applyDao"></property>
+	</bean>
+	<bean name="applyDao" class="com.zph.ssh.dao.ApplyDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean name="teacherAction" class="com.zph.ssh.actions.TeacherAction"
+		scope="prototype">
+		<property name="departmentService" ref="departmentService"></property>
+		<property name="teacherService" ref="teacherService"></property>
+	</bean>
+	<bean name="teacherService" class="com.zph.ssh.service.TeacherService">
+		<property name="teacherDao" ref="teacherDao"></property>
+	</bean>
+	<bean name="teacherDao" class="com.zph.ssh.dao.TeacherDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean name="departmentService" class="com.zph.ssh.service.DepartmentService">
+		<property name="departmentDao" ref="departmentDao"></property>
+	</bean>
+	<bean name="departmentDao" class="com.zph.ssh.dao.DepartmentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean name="courseAction" class="com.zph.ssh.actions.CourseAction"
+		scope="prototype">
+		<property name="courseService" ref="courseService"></property>
+		<property name="teacherService" ref="teacherService"></property>
+	</bean>
+	<bean name="courseService" class="com.zph.ssh.service.CourseService">
+		<property name="courseDao" ref="courseDao"></property>
+		<property name="chooseDao" ref="chooseDao"></property>
+	</bean>
+	<bean name="courseDao" class="com.zph.ssh.dao.CourseDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean name="chooseDao" class="com.zph.ssh.dao.ChooseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+</beans>

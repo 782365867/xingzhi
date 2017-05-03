@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-26 22:01:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zph.ssh.entities.CourseChoose" table="COURSECHOOSE">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="teacher" class="com.zph.ssh.entities.Teacher"
+			lazy="false">
+			<column name="TEACHER_ID" />
+		</many-to-one>
+		<many-to-one name="course" class="com.zph.ssh.entities.Course"
+			lazy="false">
+			<column name="COURSE_ID" />
+		</many-to-one>
+		<property name="date" type="java.util.Date">
+			<column name="DATE" />
+		</property>
+	</class>
+</hibernate-mapping>

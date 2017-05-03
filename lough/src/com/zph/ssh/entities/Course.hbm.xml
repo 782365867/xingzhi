@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-26 20:32:10 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zph.ssh.entities.Course" table="COURSE">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="courseId" type="java.lang.Integer">
+			<column name="COURSE_ID" not-null="true" />
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		<property name="firstCatagory" type="java.lang.String">
+			<column name="FIRST_CATAGORY" />
+		</property>
+		<property name="secondCatagory" type="java.lang.String">
+			<column name="SECOND_CATAGORY" />
+		</property>
+		<property name="flag" type="java.lang.Integer">
+			<column name="FLAG" />
+		</property>
+		<property name="count" type="java.lang.Integer">
+			<column name="COUNT" />
+		</property>
+	</class>
+</hibernate-mapping>

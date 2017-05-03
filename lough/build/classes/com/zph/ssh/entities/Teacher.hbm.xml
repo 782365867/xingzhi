@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-1-19 16:18:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zph.ssh.entities.Teacher" table="TEACHER">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="teacherName" type="java.lang.String">
+			<column name="TEACHER_NAME" />
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" />
+		</property>
+		<property name="grade" type="java.lang.Integer">
+			<column name="GRADE" />
+		</property>
+		<property name="banji" type="java.lang.String">
+			<column name="BANJI" />
+		</property>
+		<property name="leibie" type="java.lang.String">
+			<column name="LEIBIE" />
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="EMAIL" />
+		</property>
+		<property name="xiaoqu" type="java.lang.String">
+			<column name="XIAOQU" />
+		</property>
+		<many-to-one name="department" class="com.zph.ssh.entities.Department"
+			lazy="false">
+			<column name="DEPARTMENT_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>
